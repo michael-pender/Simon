@@ -18,12 +18,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="413dp"
+        android:layout_height="71dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.003">
 
         <Button
             android:id="@+id/game_one"
@@ -47,5 +49,6 @@
             android:text="Play Game 3" />
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
