@@ -1,10 +1,13 @@
 package edu.apsu.simon;
 
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 
@@ -56,45 +59,75 @@ public class MainActivity extends AppCompatActivity {
 
         //---------------Methods used for buttons------------------------
 
-        Button game1Button = findViewById(R.id.game_1);
+        final Button game1Button = findViewById(R.id.game_1);
         game1Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                game1Button.startAnimation(myAnim);
                 game1();
 
             }
         });
 
 
-        Button game2Button = findViewById(R.id.game_2);
+        final Button game2Button = findViewById(R.id.game_2);
         game2Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                game2Button.startAnimation(myAnim);
                 game2();
 
             }
         });
 
 
-        Button game3Button = findViewById(R.id.game_3);
+        final Button game3Button = findViewById(R.id.game_3);
         game3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                game3Button.startAnimation(myAnim);
                 game3();
             }
         });
 
 
 
-        Button aboutButton = findViewById(R.id.about);
+        final Button aboutButton = findViewById(R.id.about);
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                aboutButton.startAnimation(myAnim);
                 about();
             }
         });
 
     }
+
+
+
+
+
+
 
 
 //----------------Functions created to allow buttons to work and show additional pages---------
