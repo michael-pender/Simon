@@ -59,7 +59,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_2"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="GAME 1" />
 
     <Button
         android:id="@+id/game_2"
@@ -73,7 +74,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_3"
-        app:layout_constraintStart_toEndOf="@+id/game_1" />
+        app:layout_constraintStart_toEndOf="@+id/game_1"
+        tools:text="GAME 2" />
 
     <Button
         android:id="@+id/game_3"
@@ -87,7 +89,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_4"
-        app:layout_constraintStart_toEndOf="@+id/game_2" />
+        app:layout_constraintStart_toEndOf="@+id/game_2"
+        tools:text="GAME 3" />
 
     <Button
         android:id="@+id/game_4"
@@ -101,7 +104,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/game_3" />
+        app:layout_constraintStart_toEndOf="@+id/game_3"
+        tools:text="ABOUT" />
 
 
 </android.support.constraint.ConstraintLayout>
