@@ -20,13 +20,13 @@
 
     <ImageView
         android:id="@+id/title"
-        android:layout_width="348dp"
-        android:layout_height="115dp"
+        android:layout_width="384dp"
+        android:layout_height="133dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/simon" />
@@ -55,6 +55,7 @@
         android:layout_marginBottom="5dp"
         android:background="@android:color/holo_green_light"
         android:text="GAME 1"
+        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_2"
@@ -71,6 +72,7 @@
         android:layout_marginBottom="5dp"
         android:background="@android:color/holo_blue_bright"
         android:text="GAME 2"
+        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_3"
@@ -86,6 +88,7 @@
         android:layout_marginBottom="5dp"
         android:background="@android:color/holo_red_dark"
         android:text="GAME 3"
+        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_4"
@@ -101,11 +104,27 @@
         android:layout_marginBottom="5dp"
         android:background="@android:color/holo_orange_light"
         android:text="ABOUT"
+        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/game_3"
         tools:text="ABOUT" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="8dp"
+        android:text="by, Elvis and Mike"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
