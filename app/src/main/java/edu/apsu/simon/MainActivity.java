@@ -10,7 +10,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //------------Media state class with four instances."NOT_READY", "PLAYING", "PAUSED" and "STOPPED"
+
+    enum MediaState {NOT_READY, PLAYING, PAUSED, STOPPED}
+
+
     private MediaPlayer mediaPlayer;
+    private MediaState mediaState;
 
 
 
@@ -19,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
-
+//----------Getting the sound file prepared into memory and getting it prepared to play
 
         if (mediaPlayer == null){
+            mediaState = mediaState.NOT_READY;
             mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.menu);
             mediaPlayer.setLooping(true);
 
@@ -29,19 +37,18 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
                     mediaPlayer.start();
+                    mediaState = mediaState.PLAYING;
+
                 }
+
             });
+
+        }else if(mediaState == MediaState.PAUSED){
+            mediaPlayer.start();
+            mediaState = mediaState.PLAYING;
+        }else if(mediaState == MediaState.STOPPED){
+            mediaPlayer.prepareAsync();               //------this will reset and reload the media file again.
         }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,13 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
-    //------------------End of Methods------------------------------------------
 
 
 //----------------Functions created to allow buttons to work and show additional pages---------

@@ -88,12 +88,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/game_4"
+        app:layout_constraintEnd_toStartOf="@+id/about"
         app:layout_constraintStart_toEndOf="@+id/game_2"
         tools:text="GAME 3" />
 
     <Button
-        android:id="@+id/game_4"
+        android:id="@+id/about"
         android:layout_width="87dp"
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
