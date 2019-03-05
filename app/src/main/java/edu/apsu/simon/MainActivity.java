@@ -1,5 +1,6 @@
 package edu.apsu.simon;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -9,12 +10,40 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayer;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
+
+
+        if (mediaPlayer == null){
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.menu);
+            mediaPlayer.setLooping(true);
+
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    mediaPlayer.start();
+                }
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -49,6 +78,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+        Button aboutButton = findViewById(R.id.about);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                about();
+            }
+        });
+
+
+
+
+
+
     }
     //------------------End of Methods------------------------------------------
 
@@ -75,6 +118,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+    private void about(){
+        Intent intent = new Intent(getApplicationContext(),
+                About.class);
+        startActivity(intent);
+
+    }
+
 
 
 }
