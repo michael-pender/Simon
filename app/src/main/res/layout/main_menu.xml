@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/game" />
 
     <Button
@@ -52,6 +52,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_green_light"
         android:text="GAME 1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -68,6 +69,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_blue_bright"
         android:text="GAME 2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -83,6 +85,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_red_dark"
         android:text="GAME 3"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -98,6 +101,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_orange_light"
         android:text="ABOUT"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -106,6 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/game_3"
         tools:text="ABOUT" />
+
 
     <TextView
         android:id="@+id/designers"
@@ -126,7 +131,7 @@
         android:id="@+id/hand"
         android:layout_width="341dp"
         android:layout_height="298dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/hand" />
@@ -134,7 +139,7 @@
     <ImageView
         android:id="@+id/footer"
         android:layout_width="723dp"
-        android:layout_height="102dp"
+        android:layout_height="149dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:scaleType="fitXY"

@@ -1,6 +1,6 @@
 package edu.apsu.simon;
 
-import android.content.Context;
+
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
 
 
     //------------Media state class with four instances."NOT_READY", "PLAYING", "PAUSED" and "STOPPED"
@@ -28,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
+
+
+
+
+
 
 //----------Getting the sound file prepared into memory and getting it prepared to play
 
@@ -121,9 +129,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
-
-
 
 
 
