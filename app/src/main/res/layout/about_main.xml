@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="#fff000"
     android:layout_height="match_parent">
+
 
 
     <TextView
@@ -19,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="83dp"
         android:textColor="#000000"
-        android:text="Follow the color pattern. It gets faster as you go further into the game and difficult."
+        android:text="Come on really you need instructions...Just follow the color patterns. It will get faster and harder as you continue."
         android:textSize="20sp" />
 
     <TextView
@@ -37,14 +39,6 @@
         android:text="Elvis and Mike are both US ARMY Veterans. These days you can find them in the Computer Science Department at Austin Peay State University. Elvis is a Web and Internet Major/Information System and Mike is Majoring in Information System and Networking. They both are also Minoring in Mobile Development. "
         android:textColor="#000000"
         android:textSize="20sp" />
-
-
-
-
-
-
-
-
 
 
 
