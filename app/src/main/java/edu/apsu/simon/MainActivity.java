@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button facebook = findViewById(R.id.facebook);
-        facebook.setOnClickListener(new View.OnClickListener() {
+        final Button snapchat = findViewById(R.id.snapchat);
+        snapchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 // Use bounce interpolator with amplitude 0.2 and frequency 20
                 MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
                 myAnim.setInterpolator(interpolator);
-                facebook.startAnimation(myAnim);
+                snapchat.startAnimation(myAnim);
                 final String URL = "https://www.facebook.com/LinkRabbit-593568307763018/?modal=admin_todo_tour";
                 Uri uri = Uri.parse(URL);
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
