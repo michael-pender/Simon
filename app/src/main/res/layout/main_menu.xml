@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff"
+    android:background="#000000"
     android:layout_height="match_parent">
 
     <ImageView
@@ -23,27 +23,28 @@
         android:layout_width="376dp"
         android:layout_height="98dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/simon" />
 
     <ImageView
-        android:id="@+id/simon_image"
-        android:layout_width="333dp"
-        android:layout_height="328dp"
+        android:id="@+id/boardgame"
+        android:layout_width="358dp"
+        android:layout_height="350dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.621"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/game" />
+        scrolling_image_view:srcCompat="@drawable/board" />
 
     <Button
         android:id="@+id/game_1"
@@ -116,7 +117,7 @@
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="8dp"
         android:text="by, Elvis and Mike"
         android:textColor="#ffffff"
@@ -126,36 +127,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.q42.android.scrollingimageview.ScrollingImageView
-        android:id="@+id/scrolling_background"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        scrolling_image_view:speed="1dp"
-        scrolling_image_view:src="@drawable/apsu" />
-
-
-
-
-
-
 
     <ImageView
         android:id="@+id/hand"
         android:layout_width="341dp"
         android:layout_height="298dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="172dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boardgame"
+        app:layout_constraintVertical_bias="0.973"
         app:srcCompat="@drawable/hand" />
 
     <ImageView
