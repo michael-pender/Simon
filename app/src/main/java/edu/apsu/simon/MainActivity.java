@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.net.Uri;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -128,6 +129,47 @@ public class MainActivity extends AppCompatActivity {
                 about();
             }
         });
+
+        final Button facebook = findViewById(R.id.facebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                facebook.startAnimation(myAnim);
+                final String URL = "https://www.facebook.com/LinkRabbit-593568307763018/?modal=admin_todo_tour";
+                Uri uri = Uri.parse(URL);
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(i);
+
+            }
+        });
+
+
+
+        final Button instagram = findViewById(R.id.instagram);
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                instagram.startAnimation(myAnim);
+                final String URL = "https://www.linkedin.com/in/elvis-bueno-37476b63/";
+                Uri uri = Uri.parse(URL);
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(i);
+
+            }
+        });
+
+
+
 
 
 
