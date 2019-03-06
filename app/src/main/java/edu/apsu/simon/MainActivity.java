@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
                 myAnim.setInterpolator(interpolator);
                 snapchat.startAnimation(myAnim);
-                final String URL = "https://www.facebook.com/LinkRabbit-593568307763018/?modal=admin_todo_tour";
+                final String URL = "https://www.snapchat.com/";
                 Uri uri = Uri.parse(URL);
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
                 myAnim.setInterpolator(interpolator);
                 instagram.startAnimation(myAnim);
-                final String URL = "https://www.linkedin.com/in/elvis-bueno-37476b63/";
+                final String URL = "https://www.instagram.com/";
                 Uri uri = Uri.parse(URL);
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
