@@ -75,7 +75,7 @@ public class Game1 extends Activity implements ColorFragment.PushListener {
                         if(sequenceIndex < sequence.size()) {
                             doSequence();
                         } else {
-                            Log.i("app","chanlenge ?");
+                            Log.i("app","challenge ?");
                             indicator.setText("?");
                             sequenceIndex = 0;
                             challenging = true;
