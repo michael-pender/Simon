@@ -112,22 +112,6 @@
         tools:text="ABOUT" />
 
 
-    <TextView
-        android:id="@+id/designers"
-        android:layout_width="211dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="8dp"
-        android:background="#000000"
-        android:text=" by, Elvis and Mike "
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <ImageView
         android:id="@+id/hand"
         android:layout_width="341dp"
@@ -193,6 +177,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/instagram" />
+
+    <ImageView
+        android:id="@+id/subtitle"
+        android:layout_width="317dp"
+        android:layout_height="167dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:layout_constraintVertical_bias="0.011"
+        scrolling_image_view:srcCompat="@drawable/subtitle" />
 
 
 </android.support.constraint.ConstraintLayout>
