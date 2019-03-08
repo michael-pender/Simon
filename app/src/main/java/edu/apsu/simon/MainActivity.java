@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
 //----------Getting the sound file prepared into memory and getting it prepared to play
 
         if (mediaPlayer == null){
@@ -61,10 +57,6 @@ public class MainActivity extends AppCompatActivity {
         }else if(mediaState == MediaState.STOPPED){
             mediaPlayer.prepareAsync();               //------this will reset and reload the media file again.
         }
-
-
-
-
 
         //---------------Methods used for buttons------------------------
 

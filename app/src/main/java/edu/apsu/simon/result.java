@@ -44,4 +44,7 @@ public class result extends AppCompatActivity{
         super.onStop();
         moveTaskToBack(true);
     }
+    public void mainMenu(View view){
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
 }
