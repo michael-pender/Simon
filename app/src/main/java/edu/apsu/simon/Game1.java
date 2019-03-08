@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -32,12 +33,16 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
 
     private int score = 0;
 
+    private SoundPlayer sound;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.game1_main);
 
+
+        sound = new SoundPlayer(this);
 
         indicator = findViewById(R.id.indicator);
 
@@ -62,6 +67,7 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
     }
 
     private void doSequence() {
+
         indicator.setText("" + (sequenceIndex + 1));
 
         (new Handler()).postDelayed(new Runnable() {
@@ -125,7 +131,7 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
 
                 //Show Result
                 Intent intent = new Intent(getApplicationContext(), result.class);
-                intent.putExtra("SCORE", score); //having problems getting score
+                intent.putExtra("SCORE", score);
                 startActivity(intent);
 
 
