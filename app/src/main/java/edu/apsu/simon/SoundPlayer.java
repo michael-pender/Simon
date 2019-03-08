@@ -3,16 +3,18 @@ package edu.apsu.simon;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.support.v7.app.AppCompatActivity;
 
 //import edu.apsu.simon.R; not needed
 
-public class SoundPlayer {
+public class SoundPlayer extends AppCompatActivity {
 
     private static SoundPool soundPool;
     private static int topRightSound;
     private static int topLeftSound;
     private static int bottomRightSound;
     private static int bottomLeftSound;
+    private static int gameOver;
 
 
     public SoundPlayer(Context context) {
@@ -20,10 +22,11 @@ public class SoundPlayer {
         //SoundPool (int maxStreams, int streamType, int srcQuality
         soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
 
-        topLeftSound = soundPool.load(context, R.raw.topLeft, 1);
-        topRightSound = soundPool.load(context, R.raw.topRight, 1);
-        bottomLeftSound = soundPool.load(context, R.raw.bottomLeft, 1);
-        bottomRightSound = soundPool.load(context, R.raw.bottomRight, 1);
+        topLeftSound = soundPool.load(context,R.raw.topleft , 1);
+        topRightSound = soundPool.load(context, R.raw.topright, 1);
+        bottomLeftSound = soundPool.load(context, R.raw.bottomleft, 1);
+        bottomRightSound = soundPool.load(context, R.raw.bottomright, 1);
+        gameOver = soundPool.load(context, R.raw.gameover, 1);
     }
 
     public void playTopRightSound() {
@@ -44,6 +47,11 @@ public class SoundPlayer {
     public void playbottomLeftSound() {
         //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
         soundPool.play(bottomLeftSound, 1.0f, 1.0f, 1, 0, 1.0f);
+    }
+
+    public void gameOverSound() {
+        //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
+        soundPool.play(gameOver, 1.0f, 1.0f, 1, 0, 1.0f);
     }
 
 }

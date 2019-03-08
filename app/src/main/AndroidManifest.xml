@@ -22,7 +22,6 @@
         <activity android:name=".About" />
         <activity android:name=".Game1" />
         <activity android:name=".result"/>
-
     </application>
 
 </manifest>

@@ -114,7 +114,7 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
                     Log.i("app", "Yahouuuuuuu");
                     challenging = false;
                     challengeIndex = 0;
-                    indicator.setText("\u2714"); // HEAVY CHECK MARK
+                    indicator.setText("\u2714"); // CHECK MARK
 
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
@@ -128,12 +128,11 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
                 Log.i("app", "Bouhouhou");
                 challenging = false;
                 challengeIndex = 0;
-
+                sound.gameOverSound();
                 //Show Result
                 Intent intent = new Intent(getApplicationContext(), result.class);
                 intent.putExtra("SCORE", score);
                 startActivity(intent);
-
 
 
  /*               indicator.setText("\u2718");// HEAVY BALLOT X
