@@ -3,14 +3,16 @@ package edu.apsu.simon;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-public class Game1 extends Activity implements ColorFragment.PushListener {
+public class Game1 extends AppCompatActivity implements ColorFragment.PushListener {
     /** Called when the activity is first created. */
 
     private ColorFragment red;
@@ -27,6 +29,8 @@ public class Game1 extends Activity implements ColorFragment.PushListener {
 
     private boolean challenging;
     private int challengeIndex = 0;
+
+    private int score = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,7 +91,7 @@ public class Game1 extends Activity implements ColorFragment.PushListener {
     }
 
     private void incSequence() {
-//        indicator.setText("0");
+        indicator.setText("0");
         sequence.add(colors[(int) (Math.random() * colors.length)]);
         doSequence();
     }
@@ -109,6 +113,7 @@ public class Game1 extends Activity implements ColorFragment.PushListener {
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            score++; //added
                             incSequence();
                         }
                     }, 1000);
@@ -117,14 +122,22 @@ public class Game1 extends Activity implements ColorFragment.PushListener {
                 Log.i("app", "Bouhouhou");
                 challenging = false;
                 challengeIndex = 0;
-                indicator.setText("\u2718");// HEAVY BALLOT X
+
+                //Show Result
+                Intent intent = new Intent(getApplicationContext(), result.class);
+                intent.putExtra("SCORE", score); //having problems getting score
+                startActivity(intent);
+
+
+
+ /*               indicator.setText("\u2718");// HEAVY BALLOT X
 
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         initSequence();
                     }
-                }, 3000);
+                }, 3000);   */
             }
         }
     }
