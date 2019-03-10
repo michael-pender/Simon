@@ -1,6 +1,7 @@
 package edu.apsu.simon;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.support.v7.app.AlertDialog;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 
 public class Game1 extends AppCompatActivity implements ColorFragment.PushListener {
     /** Called when the activity is first created. */
@@ -144,6 +148,31 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
                     }
                 }, 3000);   */
             }
+        }
+    }
+
+   class AboutListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            String message = "<html>" +
+                    "<h2>About Space</h2>" +
+                    "<p>Music</p>" +
+                    "<p><b>Source:</b> Oribital Collasus<br>" +
+                    "<b>Creator:</b> mudkip_dreams<br>" +
+                    "<b>Link: </b> <a href='http://opengameart.org/content/space-boss-battle-theme'>source website</a><br>" +
+                    "<b>License: </b> CC-BY 3.0" +
+                    "</p></html>";
+            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+            builder.setMessage(Html.fromHtml(message));
+            builder.setPositiveButton("Ok", null);
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            // must be done after the call to show();
+            // allows anchor tags to work
+            TextView tv = (TextView) dialog.findViewById(android.R.id.message);
+            tv.setMovementMethod(LinkMovementMethod.getInstance());
         }
     }
 }
