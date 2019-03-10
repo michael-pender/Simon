@@ -76,7 +76,6 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
     }
 
     private void doSequence() {
-
         indicator.setText("" + (sequenceIndex + 1));
 
         (new Handler()).postDelayed(new Runnable() {
@@ -88,13 +87,11 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
                     @Override
                     public void run() {
                         sequence.get(sequenceIndex).off();
-
-                        Log.i("app","sequence " + sequenceIndex);
                         sequenceIndex++;
+
                         if(sequenceIndex < sequence.size()) {
                             doSequence();
                         } else {
-                            Log.i("app","challenge ?");
                             indicator.setText("?");
                             sequenceIndex = 0;
                             challenging = true;
@@ -129,9 +126,9 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
                 }
             }
         });
+
+
     }
-
-
 
     private void incSequence() {
         indicator.setText("0");
@@ -202,10 +199,7 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
         }
     }
 
-
-
-
-    class AboutListener implements View.OnClickListener {
+ /*   class AboutListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             String message = "<html>" +
@@ -228,7 +222,7 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
             TextView tv = (TextView) dialog.findViewById(android.R.id.message);
             tv.setMovementMethod(LinkMovementMethod.getInstance());
         }
-    }
+    }*/
 }
 
 
