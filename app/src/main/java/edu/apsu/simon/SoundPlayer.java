@@ -29,24 +29,28 @@ public class SoundPlayer extends AppCompatActivity {
         gameOver = soundPool.load(context, R.raw.gameover, 1);
     }
 
-    final public void playTopRightSound() {
+    final public SoundPlayer playTopRightSound() {
         //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
         soundPool.play(topRightSound, 1.0f, 1.0f, 1, 0, 1.0f);
+        return null;
     }
 
-    final public void playTopLeftSound() {
+    final public SoundPlayer playTopLeftSound() {
         //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
         soundPool.play(topLeftSound, 1.0f, 1.0f, 1, 0, 1.0f);
+        return null;
     }
 
-    final public void playBottomRightSound() {
+    final public SoundPlayer playBottomRightSound() {
         //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
         soundPool.play(bottomRightSound, 1.0f, 1.0f, 1, 0, 1.0f);
+        return null;
     }
 
-    final public void playBottomLeftSound() {
+    final public SoundPlayer playBottomLeftSound() {
         //play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)
         soundPool.play(bottomLeftSound, 1.0f, 1.0f, 1, 0, 1.0f);
+        return null;
     }
 
    final public void gameOverSound() {

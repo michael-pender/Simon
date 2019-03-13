@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simon</string>
+    <string name="about">About</string>
+    <string name="how_to_play">How to Play</string>
 </resources>

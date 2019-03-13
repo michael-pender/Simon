@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
                 myAnim.setInterpolator(interpolator);
                 game2Button.startAnimation(myAnim);
+                mediaPlayer.stop();
                 game2();
 
             }
@@ -209,10 +210,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-
-
-
 
     public void onBackPressed() {
         new AlertDialog.Builder(this)

@@ -35,10 +35,7 @@ public class result extends AppCompatActivity{
             highScoreLabel.setText("HIGH SCORE: " + highScore);
         }
     }
-    public void tryAgain(View view){
-        startActivity(new Intent(getApplicationContext(), Game1.class));
-    }
-    //music still plays
+
     public void quit(View view){
         finish();
         super.onStop();
