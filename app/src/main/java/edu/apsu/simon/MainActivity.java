@@ -10,10 +10,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.net.Uri;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 
 
 public class MainActivity extends AppCompatActivity {
-
 
 
 
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
 
 
 
@@ -60,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         //---------------Methods used for buttons------------------------
 
+
+
+
         final Button game1Button = findViewById(R.id.game_1);
         game1Button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
                 myAnim.setInterpolator(interpolator);
                 game1Button.startAnimation(myAnim);
+                mediaPlayer.stop();
                 game1();
 
             }
@@ -202,6 +209,33 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
+
+
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Exit App")
+                .setMessage("Are you sure you want to exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //super.onBackPressed();
+                        //Or used finish();
+                        finish();
+                        mediaPlayer.stop();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+
+    }
+
+
 
 
 
