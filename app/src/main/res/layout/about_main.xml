@@ -19,9 +19,11 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
+        android:text="This simon features high quality graphics and sounds. Test your memory and boost your brain power with this great game. Simply follow the leader! This game can be enjoyed by all ages.
+
+How to Play: Simon will make a random sequence, starting with only one. All you have to do is repeat the pattern, taking turns with the computer. But be careful. Pick your game wisely. Hit the wrong button and It's game over!"
         android:textColor="#000000"
-        android:text="Come on really you need instructions...Just follow the color patterns. It will get faster and harder as you continue."
         android:textSize="20sp" />
 
     <TextView
@@ -35,7 +37,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
-        android:layout_height="206dp"
+        android:layout_height="488dp"
         android:text="Elvis and Mike are both US ARMY Veterans. These days you can find them in the Computer Science Department at Austin Peay State University. Elvis is a Web and Internet Major/Information System and Mike is Majoring in Information System and Networking. They both are also Minoring in Mobile Development. "
         android:textColor="#000000"
         android:textSize="20sp" />
