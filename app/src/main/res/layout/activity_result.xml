@@ -32,18 +32,12 @@
         android:textSize="30sp"
         android:layout_marginTop="50dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Try Again"
-        android:textAllCaps="false"
-        android:onClick="tryAgain"/>
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="Main Menu"
         android:textAllCaps="false"
         android:onClick="mainMenu"/>
@@ -51,7 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="Quit"
         android:textAllCaps="false"
         android:onClick="quit"/>

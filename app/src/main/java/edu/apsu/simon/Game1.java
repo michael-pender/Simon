@@ -25,6 +25,7 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
     private ColorFragment blue;
     private ColorFragment yellow;
 
+
     private int sequenceIndex = 0;
     private ArrayList<ColorFragment> sequence;
 
@@ -63,6 +64,7 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
         colors[1].setPushListener(this);
         colors[2].setPushListener(this);
         colors[3].setPushListener(this);
+
 
         initSequence();
         doSequence();

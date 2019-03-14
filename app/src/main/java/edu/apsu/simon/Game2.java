@@ -11,6 +11,9 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
@@ -19,16 +22,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Game2 extends AppCompatActivity implements ColorFragment.PushListener{
+public class Game2 extends AppCompatActivity implements ColorFragment.PushListener {
 
-    private ColorFragment red;
+   /* private ColorFragment red;
     private ColorFragment green;
     private ColorFragment blue;
-    private ColorFragment yellow;
+    private ColorFragment yellow; */
 
     private int sequenceIndex = 0;
     private ArrayList<ColorFragment> sequence;
-
     private ColorFragment[] colors;
 
     private TextView indicator;
@@ -41,6 +43,9 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
     private SoundPlayer sound;
     private SoundPool soundPool;
     private HashSet<Integer> soundsLoaded;
+    // private ArrayList<SoundPlayer> soundsLoaded; //added
+    // private SoundPlayer[] soundEffects;  //added
+    // private int soundIndex = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,8 +53,9 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.game1_main);
 
-
         sound = new SoundPlayer(this);
+        soundsLoaded = new HashSet<>();
+
 
         indicator = findViewById(R.id.indicator);
 
@@ -64,24 +70,30 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
         colors[2].setPushListener(this);
         colors[3].setPushListener(this);
 
-        soundsLoaded = new HashSet<Integer>();
-
         initSequence();
         doSequence();
     }
 
     private void initSequence() {
         sequence = new ArrayList<ColorFragment>();
+        soundsLoaded = new HashSet<>();
         incSequence();
     }
 
     private void doSequence() {
         indicator.setText("" + (sequenceIndex + 1));
-
+        
         (new Handler()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 sequence.get(sequenceIndex).on();
+
+
+
+
+
+
+
 
                 (new Handler()).postDelayed(new Runnable() {
                     @Override
@@ -89,7 +101,7 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
                         sequence.get(sequenceIndex).off();
                         sequenceIndex++;
 
-                        if(sequenceIndex < sequence.size()) {
+                        if (sequenceIndex < sequence.size()) {
                             doSequence();
                         } else {
                             indicator.setText("?");
@@ -97,7 +109,7 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
                             challenging = true;
                         }
                     }
-                }, 300);
+                }, 200);
             }
         }, 1000);
     }
@@ -126,13 +138,12 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
                 }
             }
         });
-
-
     }
 
     private void incSequence() {
         indicator.setText("0");
         sequence.add(colors[(int) (Math.random() * colors.length)]);
+        //soundsLoaded.add(soundEffects[(int) (Math.random() * soundEffects.length)]); //added
         doSequence();
     }
 
@@ -141,18 +152,19 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
         if (challenging) {
             if (v == sequence.get(challengeIndex)) {
                 indicator.setText("" + (challengeIndex + 1));
-                Log.i("app", "good " + challengeIndex);
-                challengeIndex++;
+                //Log.i("app", "good " + challengeIndex);
+                getSound(v);
+                challengeIndex++;  //add to the next round
 
                 if (challengeIndex >= sequence.size()) {
                     challenging = false;
                     challengeIndex = 0;
                     indicator.setText("\u2714"); // CHECK MARK
-
+                    getSound(v);
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            score++; //added
+                            score++; //score is added
                             incSequence();
                         }
                     }, 1000);
@@ -187,14 +199,14 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
         }
     }
 
-    private void getSound(View view){
-        if(view.getId()== R.id.topleft){
+    private void getSound(View v) {
+        if (v.getId() == R.id.topleft) {
             sound.playTopLeftSound();
-        }else if(view.getId()== R.id.topright) {
+        } else if (v.getId() == R.id.topright) {
             sound.playTopRightSound();
-        }else if(view.getId() == R.id.bottomleft){
+        } else if (v.getId() == R.id.bottomleft) {
             sound.playBottomLeftSound();
-        }else if(view.getId() == R.id.bottomright){
+        } else if (v.getId() == R.id.bottomright) {
             sound.playBottomRightSound();
         }
     }
@@ -223,6 +235,31 @@ public class Game2 extends AppCompatActivity implements ColorFragment.PushListen
             tv.setMovementMethod(LinkMovementMethod.getInstance());
         }
     }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        //return super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+        public boolean onOptionsItemSelected (MenuItem item){
+
+        switch (item.getItemId()){
+            case R.id.about:
+                Intent intent1 = new Intent(this, AboutGame.class);
+                this.startActivity(intent1);
+                return true;
+            case R.id.how_to_play:
+                Intent intent2 = new Intent(this, HowToPlay.class);
+                this.startActivity(intent2);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
 
 
