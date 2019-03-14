@@ -48,7 +48,7 @@
         scrolling_image_view:srcCompat="@drawable/board" />
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/play_button"
         android:layout_width="87dp"
         android:layout_height="130dp"
         android:layout_marginEnd="8dp"

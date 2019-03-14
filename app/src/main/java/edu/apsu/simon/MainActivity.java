@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final Button game1Button = findViewById(R.id.game_1);
+        final Button game1Button = findViewById(R.id.play_button);
         game1Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -83,36 +83,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        final Button game2Button = findViewById(R.id.game_2);
-        game2Button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
-
-                // Use bounce interpolator with amplitude 0.2 and frequency 20
-                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
-                myAnim.setInterpolator(interpolator);
-                game2Button.startAnimation(myAnim);
-                mediaPlayer.stop();
-                game2();
-
-            }
-        });
-
-
-        final Button game3Button = findViewById(R.id.game_3);
-        game3Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
-
-                // Use bounce interpolator with amplitude 0.2 and frequency 20
-                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
-                myAnim.setInterpolator(interpolator);
-                game3Button.startAnimation(myAnim);
-                game3();
-            }
-        });
 
 
 
@@ -184,21 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void game1(){
         Intent intent = new Intent(getApplicationContext(),
-                Game1.class);
-        startActivity(intent);
-
-    }
-
-    private void game2(){
-        Intent intent = new Intent(getApplicationContext(),
-                Game2.class);
-        startActivity(intent);
-
-    }
-
-    private void game3(){
-        Intent intent = new Intent(getApplicationContext(),
-                Game3.class);
+                Game.class);
         startActivity(intent);
 
     }

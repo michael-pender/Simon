@@ -22,12 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".About"  />
-        <activity android:name=".Game1" />
-        <activity android:name=".Game2" />
-        <activity android:name=".result" />
-        <activity android:name=".HowToPlay"
-            android:label="How to Play"/>
-        <activity android:name=".AboutGame" />
+        <activity android:name=".Game"/>
     </application>
 
 </manifest>
