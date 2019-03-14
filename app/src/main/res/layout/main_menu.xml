@@ -23,9 +23,10 @@
         android:layout_width="376dp"
         android:layout_height="98dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/simon" />
@@ -47,69 +48,32 @@
         scrolling_image_view:srcCompat="@drawable/board" />
 
     <Button
-        android:id="@+id/game_1"
+        android:id="@+id/play"
         android:layout_width="87dp"
         android:layout_height="130dp"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="94dp"
-        android:background="@android:color/holo_green_light"
-        android:text="GAME 1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/game_2"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="GAME 1" />
-
-    <Button
-        android:id="@+id/game_2"
-        android:layout_width="87dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginBottom="28dp"
         android:background="@android:color/holo_blue_bright"
-        android:text="GAME 2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/game_3"
-        app:layout_constraintStart_toEndOf="@+id/game_1"
-        tools:text="GAME 2" />
-
-    <Button
-        android:id="@+id/game_3"
-        android:layout_width="87dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="94dp"
-        android:background="@android:color/holo_red_dark"
-        android:text="GAME 3"
+        android:text="PLAY"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/about"
-        app:layout_constraintStart_toEndOf="@+id/game_2"
-        tools:text="GAME 3" />
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="PLAY" />
 
     <Button
         android:id="@+id/about"
         android:layout_width="87dp"
         android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginBottom="28dp"
         android:background="@color/yellow"
-        android:text="ABOUT"
+        android:text="INFO"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/game_3"
-        tools:text="ABOUT" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <ImageView
@@ -120,10 +84,10 @@
         android:layout_marginBottom="172dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boardgame"
-        app:layout_constraintVertical_bias="0.893"
+        app:layout_constraintVertical_bias="0.865"
         app:srcCompat="@drawable/hand" />
 
     <ImageView
@@ -132,37 +96,38 @@
         android:layout_height="149dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/footer" />
 
     <Button
         android:id="@+id/instagram"
-        android:layout_width="82dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="188dp"
+        android:layout_width="85dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="328dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/snapchat"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/snapchat"
         android:layout_width="69dp"
         android:layout_height="60dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/snapchat"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/follow_us"
@@ -170,19 +135,18 @@
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="40dp"
         android:text="FOLLOW US"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/instagram" />
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/subtitle"
         android:layout_width="317dp"
         android:layout_height="167dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -190,7 +154,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/title"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintVertical_bias="0.019" />
         <!--scrolling_image_view:srcCompat="@drawable/subtitle"--> />
 
 
