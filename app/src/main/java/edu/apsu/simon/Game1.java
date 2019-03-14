@@ -1,11 +1,10 @@
 package edu.apsu.simon;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
-import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.SoundPool;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +13,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 import android.support.v7.app.AlertDialog;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 
 public class Game1 extends AppCompatActivity implements ColorFragment.PushListener {
+
+
+
     /** Called when the activity is first created. */
 
     private ColorFragment red;
@@ -46,11 +46,14 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
         setContentView(R.layout.game1_main);
 
 
+
+
         sound = new SoundPlayer(this);
 
         indicator = findViewById(R.id.indicator);
 
         colors = new ColorFragment[4];
+
         colors[0] = findViewById(R.id.topleft);
         colors[1] = findViewById(R.id.topright);
         colors[2] = findViewById(R.id.bottomleft);
@@ -151,28 +154,31 @@ public class Game1 extends AppCompatActivity implements ColorFragment.PushListen
         }
     }
 
-   class AboutListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            String message = "<html>" +
-                    "<h2>About Space</h2>" +
-                    "<p>Music</p>" +
-                    "<p><b>Source:</b> Oribital Collasus<br>" +
-                    "<b>Creator:</b> mudkip_dreams<br>" +
-                    "<b>Link: </b> <a href='http://opengameart.org/content/space-boss-battle-theme'>source website</a><br>" +
-                    "<b>License: </b> CC-BY 3.0" +
-                    "</p></html>";
-            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-            builder.setMessage(Html.fromHtml(message));
-            builder.setPositiveButton("Ok", null);
 
-            AlertDialog dialog = builder.create();
-            dialog.show();
 
-            // must be done after the call to show();
-            // allows anchor tags to work
-            TextView tv = (TextView) dialog.findViewById(android.R.id.message);
-            tv.setMovementMethod(LinkMovementMethod.getInstance());
-        }
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Exit App")
+                .setMessage("Are you sure you want to exit game?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //super.onBackPressed();
+                        //Or used finish();
+                        finish();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+
     }
+
+
+
+
 }
