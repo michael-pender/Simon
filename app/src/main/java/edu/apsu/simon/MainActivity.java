@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      /*  final Button game2Button = findViewById(R.id.play2_button);
-        game1Button.setOnClickListener(new View.OnClickListener(){
+        final Button game2Button = findViewById(R.id.play2_button);
+        game2Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-*/
+
 
 
         final Button aboutButton = findViewById(R.id.about);
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button snapchat = findViewById(R.id.snapchat);
+ /*     final Button snapchat = findViewById(R.id.snapchat);
         snapchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
 
             }
-        });
+        });*/
 
 
 

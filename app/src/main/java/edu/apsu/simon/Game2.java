@@ -29,11 +29,13 @@ public class Game2 extends AppCompatActivity {
     public SoundPool sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
     Random r = new Random();
     final Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_main);
+        setContentView(R.layout.game_main2);
         sadMusic = sp.load(this, R.raw.sad, 1);
+
         button_one = findViewById(R.id.button_one);
         button_two = findViewById(R.id.button_two);
         button_three = findViewById(R.id.button_three);
@@ -43,11 +45,9 @@ public class Game2 extends AppCompatActivity {
         button_seven = findViewById(R.id.button_seven);
         button_eight = findViewById(R.id.button_eight);
 
-
-
-
         textView = (TextView) findViewById(R.id.textView2);
         findViewById(R.id.about_button).setOnClickListener(new Game2.AboutListener());
+
         button_one.setOnTouchListener(onTouch);
         button_two.setOnTouchListener(onTouch);
         button_three.setOnTouchListener(onTouch);
@@ -78,7 +78,6 @@ public class Game2 extends AppCompatActivity {
                 });
         AlertDialog myDialog = builder.create();
         myDialog.show();
-
     }
 
     View.OnTouchListener onTouch = new View.OnTouchListener() {
@@ -110,9 +109,8 @@ public class Game2 extends AppCompatActivity {
                     case R.id.button_eight:
                         x = 8;
                         break;
-
-
                 }
+
                 if (array_of_moves[numberOfClicksEachStage] != x) { // on wrong click
                     sp.play(sadMusic, 1, 1, 1, 0, 1f);
 
@@ -142,6 +140,7 @@ public class Game2 extends AppCompatActivity {
 
                     return true;
                 }
+
                 //on success
                 playSound(v.getId());
                 xorMyColor(v);
@@ -193,8 +192,8 @@ public class Game2 extends AppCompatActivity {
                 break;
             case R.id.button_eight:
                 audioRes = R.raw.fa;
-
         }
+
         MediaPlayer p = MediaPlayer.create(this, audioRes);
         p.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -254,27 +253,26 @@ public class Game2 extends AppCompatActivity {
         final Runnable r = new Runnable() {
             public void run() {
                 if (array_of_moves[click_index] == 1) {
-                    playSound(R.id.leftTop);
+                    playSound(R.id.button_one);
                     xorMyColor(button_one);
                 } else if (array_of_moves[click_index] == 2) {
-                    playSound(R.id.rightTop);
+                    playSound(R.id.button_two);
                     xorMyColor(button_two);
                 } else if (array_of_moves[click_index] == 3) {
-                    playSound(R.id.leftBottom);
+                    playSound(R.id.button_three);
                     xorMyColor(button_three);
                 } else if (array_of_moves[click_index] == 4) {
-                    playSound(R.id.leftBottom);
+                    playSound(R.id.button_four);
                     xorMyColor(button_four);
                 } else if (array_of_moves[click_index] == 5) {
-                    playSound(R.id.leftBottom);
+                    playSound(R.id.button_five);
                     xorMyColor(button_five);
                 } else if (array_of_moves[click_index] == 6) {
-                    playSound(R.id.leftBottom);
+                    playSound(R.id.button_six);
                     xorMyColor(button_six);
                 } else if (array_of_moves[click_index] == 7) {
-                    playSound(R.id.leftBottom);
+                    playSound(R.id.button_seven);
                     xorMyColor(button_seven);
-
                 } else {
                     playSound(R.id.button_eight);
                     xorMyColor(button_eight);
@@ -327,10 +325,7 @@ public class Game2 extends AppCompatActivity {
                 })
                 .setNegativeButton("No", null)
                 .show();
-
     }
-
-
 }
 
 

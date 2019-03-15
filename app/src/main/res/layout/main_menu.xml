@@ -64,22 +64,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.934" />
 
- <!--   <Button
+    <Button
         android:id="@+id/play2_button"
         android:layout_width="94dp"
         android:layout_height="129dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/play_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />-->
+        app:layout_constraintBottom_toTopOf="@+id/follow_us"
+        app:layout_constraintEnd_toStartOf="@+id/play_button"
+        app:layout_constraintStart_toEndOf="@+id/instagram"
+        app:layout_constraintTop_toBottomOf="@+id/boardgame" />
 
     <Button
         android:id="@+id/about"
@@ -131,29 +129,12 @@
         android:layout_width="101dp"
         android:layout_height="98dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/snapchat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.91" />
-
-    <Button
-        android:id="@+id/snapchat"
-        android:layout_width="92dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/snapchat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
 
     <TextView
         android:id="@+id/follow_us"

@@ -66,7 +66,6 @@ public class Game extends AppCompatActivity {
                 });
         AlertDialog myDialog = builder.create();
         myDialog.show();
-
     }
 
     View.OnTouchListener onTouch = new View.OnTouchListener() {
@@ -276,10 +275,7 @@ public class Game extends AppCompatActivity {
                 })
                 .setNegativeButton("No", null)
                 .show();
-
     }
-
-
 
 }
 
