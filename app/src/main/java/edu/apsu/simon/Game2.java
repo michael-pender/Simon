@@ -18,12 +18,10 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class Game extends AppCompatActivity {
+public class Game2 extends AppCompatActivity {
 
-    View leftTop;
-    View leftBottom;
-    View rightTop;
-    View rightBottom;
+    View button_one, button_two, button_three, button_four, button_five, button_six, button_seven,
+    button_eight;
     TextView textView;
     final int MAX_LENGTH = 1000;
     int array_of_moves[] = new int[MAX_LENGTH];
@@ -36,16 +34,30 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_main);
         sadMusic = sp.load(this, R.raw.sad, 1);
-        leftTop = findViewById(R.id.leftTop);
-        leftBottom = findViewById(R.id.leftBottom);
-        rightTop = findViewById(R.id.rightTop);
-        rightBottom = findViewById(R.id.rightBottom);
+        button_one = findViewById(R.id.button_one);
+        button_two = findViewById(R.id.button_two);
+        button_three = findViewById(R.id.button_three);
+        button_four = findViewById(R.id.button_four);
+        button_five = findViewById(R.id.button_five);
+        button_six = findViewById(R.id.button_six);
+        button_seven = findViewById(R.id.button_seven);
+        button_eight = findViewById(R.id.button_eight);
+
+
+
+
         textView = (TextView) findViewById(R.id.textView2);
-        findViewById(R.id.about_button).setOnClickListener(new AboutListener());
-        leftTop.setOnTouchListener(onTouch);
-        leftBottom.setOnTouchListener(onTouch);
-        rightBottom.setOnTouchListener(onTouch);
-        rightTop.setOnTouchListener(onTouch);
+        findViewById(R.id.about_button).setOnClickListener(new Game2.AboutListener());
+        button_one.setOnTouchListener(onTouch);
+        button_two.setOnTouchListener(onTouch);
+        button_three.setOnTouchListener(onTouch);
+        button_four.setOnTouchListener(onTouch);
+        button_five.setOnTouchListener(onTouch);
+        button_six.setOnTouchListener(onTouch);
+        button_seven.setOnTouchListener(onTouch);
+        button_eight.setOnTouchListener(onTouch);
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String a[] = {"Game1 (Easy)", " Game2 (Medium)", "Game3 (Hard)", "Game4 (Geek)"};
         builder.setTitle("SELECT YOUR LEVEL GAME!")
@@ -54,7 +66,7 @@ public class Game extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         hardness = which;
                         textView.setText("Current score: " + numberOfElmentsInMovesArray + "           High score: " + highScore);
-                        Toast.makeText(Game.this, " WELCOME TO SIMON " , Toast.LENGTH_LONG).show();
+                        Toast.makeText(Game2.this, " WELCOME TO SIMON " , Toast.LENGTH_LONG).show();
                         //on initial start, click the playGame function after delay
                         final Runnable r = new Runnable() {
                             public void run() {
@@ -74,23 +86,37 @@ public class Game extends AppCompatActivity {
         public boolean onTouch(View v, MotionEvent event) {
             if (event.getAction() == MotionEvent.ACTION_UP) {
                 switch (v.getId()) {
-                    case R.id.leftTop:
+                    case R.id.button_one:
                         x = 1;
                         break;
-                    case R.id.rightTop:
+                    case R.id.button_two:
                         x = 2;
                         break;
-                    case R.id.rightBottom:
+                    case R.id.button_three:
                         x = 4;
                         break;
-                    case R.id.leftBottom:
+                    case R.id.button_four:
                         x = 3;
                         break;
+                    case R.id.button_five:
+                        x = 5;
+                        break;
+                    case R.id.button_six:
+                        x = 6;
+                        break;
+                    case R.id.button_seven:
+                        x = 7;
+                        break;
+                    case R.id.button_eight:
+                        x = 8;
+                        break;
+
+
                 }
                 if (array_of_moves[numberOfClicksEachStage] != x) { // on wrong click
                     sp.play(sadMusic, 1, 1, 1, 0, 1f);
 
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Game.this);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Game2.this);
                     alertDialogBuilder.setMessage("Game over, you reached level: " + (numberOfElmentsInMovesArray - 1) + ", Do you want to play again?");
                     alertDialogBuilder.setPositiveButton("Yes",
                             new DialogInterface.OnClickListener() {
@@ -144,18 +170,30 @@ public class Game extends AppCompatActivity {
         //function that play sound according to sound ID
         int audioRes = 0;
         switch (id) {
-            case R.id.leftTop:
+            case R.id.button_one:
                 audioRes = R.raw.doo;
                 break;
-            case R.id.rightTop:
+            case R.id.button_two:
                 audioRes = R.raw.re;
                 break;
-            case R.id.rightBottom:
+            case R.id.button_three:
                 audioRes = R.raw.mi;
                 break;
-            case R.id.leftBottom:
+            case R.id.button_four:
                 audioRes = R.raw.fa;
                 break;
+            case R.id.button_five:
+                audioRes = R.raw.doo;
+                break;
+            case R.id.button_six:
+                audioRes = R.raw.re;
+                break;
+            case R.id.button_seven:
+                audioRes = R.raw.mi;
+                break;
+            case R.id.button_eight:
+                audioRes = R.raw.fa;
+
         }
         MediaPlayer p = MediaPlayer.create(this, audioRes);
         p.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -217,16 +255,29 @@ public class Game extends AppCompatActivity {
             public void run() {
                 if (array_of_moves[click_index] == 1) {
                     playSound(R.id.leftTop);
-                    xorMyColor(leftTop);
+                    xorMyColor(button_one);
                 } else if (array_of_moves[click_index] == 2) {
                     playSound(R.id.rightTop);
-                    xorMyColor(rightTop);
+                    xorMyColor(button_two);
                 } else if (array_of_moves[click_index] == 3) {
                     playSound(R.id.leftBottom);
-                    xorMyColor(leftBottom);
+                    xorMyColor(button_three);
+                } else if (array_of_moves[click_index] == 4) {
+                    playSound(R.id.leftBottom);
+                    xorMyColor(button_four);
+                } else if (array_of_moves[click_index] == 5) {
+                    playSound(R.id.leftBottom);
+                    xorMyColor(button_five);
+                } else if (array_of_moves[click_index] == 6) {
+                    playSound(R.id.leftBottom);
+                    xorMyColor(button_six);
+                } else if (array_of_moves[click_index] == 7) {
+                    playSound(R.id.leftBottom);
+                    xorMyColor(button_seven);
+
                 } else {
-                    playSound(R.id.rightBottom);
-                    xorMyColor(rightBottom);
+                    playSound(R.id.button_eight);
+                    xorMyColor(button_eight);
                 }
             }
         };
@@ -280,6 +331,6 @@ public class Game extends AppCompatActivity {
     }
 
 
-
 }
+
 

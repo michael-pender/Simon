@@ -82,8 +82,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+      /*  final Button game2Button = findViewById(R.id.play2_button);
+        game1Button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                final Animation myAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
 
+                // Use bounce interpolator with amplitude 0.2 and frequency 20
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.5, 30);
+                myAnim.setInterpolator(interpolator);
+                game2Button.startAnimation(myAnim);
+                mediaPlayer.stop();
+                game2();
 
+            }
+        });
+*/
 
 
         final Button aboutButton = findViewById(R.id.about);
@@ -159,6 +173,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void game2(){
+        Intent intent = new Intent(getApplicationContext(),
+                Game2.class);
+        startActivity(intent);
+
+    }
 
     private void about(){
         Intent intent = new Intent(getApplicationContext(),
