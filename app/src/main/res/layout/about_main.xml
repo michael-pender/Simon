@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="This simon features high quality graphics and sounds. Test your memory and boost your brain power with this great game. Simply follow the leader! This game can be enjoyed by all ages.
 
-How to Play: Simon will make a random sequence, starting with only one. All you have to do is repeat the pattern, taking turns with the computer. But be careful. Pick your game wisely. Hit the wrong button and It's game over!"
+Simon will make a random sequence, starting with only one. All you have to do is repeat the pattern, taking turns with the computer. But be careful. Pick your game wisely. Hit the wrong button and It's game over!"
         android:textColor="#000000"
         android:textSize="20sp" />
 
